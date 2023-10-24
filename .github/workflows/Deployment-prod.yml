@@ -51,7 +51,7 @@ jobs:
             aws configure set region your-aws-region 
        
         - name: "Copy artifact to S3"     
-          run:  aws s3  deploy.zip s3://${{ env.EB_PACKAGE_S3_BUCKET_NAME }}/deploy.zip
+          run:  aws s3 cp deploy.zip s3://${{ env.EB_PACKAGE_S3_BUCKET_NAME }}/deploy.zip
            
         - name: Deploy to Elastic Beanstalk
           run: |
