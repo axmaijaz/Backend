@@ -1,0 +1,79 @@
+name: Deployment Pipeline
+
+on:
+   workflow_run:
+        workflows: ["Build and Test"] 
+        types:
+            - completed
+   pull_request:
+        types:
+            - closed
+
+   workflow_dispatch:
+       inputs:
+        production_approval:
+            description: 'Approve Production Deployment'
+            required: true
+            default: 'false'
+           
+            
+env:    
+      EB_PACKAGE_S3_BUCKET_NAME : "ebs-bucket-asma"
+      EB_APPLICATION_NAME       : "dotnet-app"
+      EB_ENVIRONMENT_NAME       : "Dotnetapp-env"
+      DEPLOY_PACKAGE_NAME       : "dotnet-app-${{ github.sha }}.zip"
+      AWS_REGION_NAME           : "af-south-1"
+
+jobs:       
+  deploy_staging:
+        name: Deploy to Staging
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v2
+
+        - name: Build and Deploy Staging
+          run:  echo "Building and deploying to Staging environment..."
+
+        - name: Publish artifacts
+          run: dotnet publish -o site
+
+        - name: zip artifacts 
+          run: |
+            cd site
+            zip ../site.zip *
+            tar.exe -a -c -f ../site.zip *
+
+        - name: "Configure AWS Credentials"
+          run: |
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws configure set region your-aws-region 
+       
+        - name: "Copy artifact to S3"     
+          run:  aws s3  deploy.zip s3://${{ env.EB_PACKAGE_S3_BUCKET_NAME }}/deploy.zip
+           
+        - name: Deploy to Elastic Beanstalk
+          run: |
+             aws elasticbeanstalk create-application-version --application-name ${{ env.EB_APPLICATION_NAME }} --source-bundle S3Bucket=${{ env.EB_PACKAGE_S3_BUCKET_NAME }},S3Key=deploy.zip
+             aws elasticbeanstalk update-environment --environment-name ${{ env.EB_ENVIRONMENT_NAME }}--application-name ${{ env.EB_APPLICATION_NAME }} --e
+             echo 'Deployment to AWS Elastic Beanstalk complete.'
+
+  deploy_production:
+        name: Deploy to Production (Manual Approval)
+        runs-on: ubuntu-latest
+        needs: [deploy_staging]
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.production_approval == 'true'
+
+        steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v2
+
+        # Add your deployment steps for production here.
+        # For example:
+        - name: Deploy Production
+          run: echo "Deploying to production environment ..."
+
+
+
