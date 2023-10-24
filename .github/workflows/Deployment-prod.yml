@@ -43,7 +43,7 @@ jobs:
           run: |
             cd site
             zip ../site.zip *
-            tar.exe -a -c -f ../site.zip *
+            tar.exe -a -c -f ../../site.zip *
 
         - name: "Configure AWS Credentials"
           run: |
