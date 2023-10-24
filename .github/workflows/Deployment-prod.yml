@@ -39,7 +39,7 @@ jobs:
         - name: Publish artifacts
           run: dotnet publish -o site
 
-        - name: zip artifacts 
+        - name: Zip Artifacts 
           run: |
             cd site
             zip ../site.zip *
