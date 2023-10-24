@@ -56,7 +56,10 @@ jobs:
           run: |
             TIMESTAMP=$(date '+%Y%m%d%H%M%S')
             VERSION_LABEL="version@$TIMESTAMP"
-
+           
+        - name: print run number
+          run: 
+            echo "${{github.run_number}}"
           
         - name: Deploy to Elastic Beanstalk
           run: |
