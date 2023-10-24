@@ -22,7 +22,7 @@ env:
       EB_APPLICATION_NAME       : "dotnet-app"
       EB_ENVIRONMENT_NAME       : "Dotnetapp-env"
       DEPLOY_PACKAGE_NAME       : "dotnet-app-${{ github.sha }}.zip"
-      AWS_REGION_NAME           : "af-south-1"
+      AWS_REGION_NAME           : "us-east-1"
 
 jobs:       
   deploy_staging:
@@ -48,7 +48,7 @@ jobs:
           run: |
             aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws configure set region your-aws-region 
+            aws configure set region your-aws-region ${{ secrets.AWS_REGION_NAME }}
        
         - name: "Copy artifact to S3"     
           run:  aws s3 cp site.zip s3://ebs-bucket-t1/site.zip
