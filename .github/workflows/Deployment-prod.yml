@@ -36,7 +36,7 @@ jobs:
 
         - name: Zip Artifacts 
           run: |
-            cd site
+            cd package
             zip ../package.zip *
 
         - name: Configure AWS Credentials
