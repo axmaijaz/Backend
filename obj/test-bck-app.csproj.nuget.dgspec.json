@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app\\test-bck-app.csproj": {}
+    "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app\\test-bck-app.csproj": {
+    "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app\\test-bck-app.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app.csproj",
         "projectName": "test-bck-app",
-        "projectPath": "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app\\test-bck-app.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Backend-core\\test-bck-app\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Backend-core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

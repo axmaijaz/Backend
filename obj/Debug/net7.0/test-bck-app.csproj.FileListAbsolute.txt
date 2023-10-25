@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\Backend-core\bin\Debug\net7.0\test-bck-app.exe
+C:\Users\User\Desktop\Backend-core\bin\Debug\net7.0\test-bck-app.deps.json
+C:\Users\User\Desktop\Backend-core\bin\Debug\net7.0\test-bck-app.runtimeconfig.json
+C:\Users\User\Desktop\Backend-core\bin\Debug\net7.0\test-bck-app.dll
+C:\Users\User\Desktop\Backend-core\bin\Debug\net7.0\test-bck-app.pdb
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\test-bck-app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\test-bck-app.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\test-bck-app.AssemblyInfo.cs
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\test-bck-app.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\test-bck-app.dll
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\refint\test-bck-app.dll
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\test-bck-app.pdb
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\test-bck-app.genruntimeconfig.cache
+C:\Users\User\Desktop\Backend-core\obj\Debug\net7.0\ref\test-bck-app.dll
