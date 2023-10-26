@@ -60,7 +60,7 @@ jobs:
   deploy_production:
         name: Deploy to Production (Manual Approval)
         runs-on: ubuntu-latest
-        needs: [deploy_staging]
+        # needs: [deploy_staging]
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.production_approval == 'true'
 
         steps:
