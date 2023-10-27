@@ -6,19 +6,19 @@ using Microsoft.Extensions.Hosting;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            Console.WriteLine("Hello ASMA! This is test app for Deployment");
+            Console.WriteLine("Hello ASMA! This is a test app for Deployment");
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://localhost:5000"); // Specify the port here
+                    webBuilder.UseUrls("http://localhost:5000"); 
                 });
     }
 }
