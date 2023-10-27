@@ -3,14 +3,11 @@ using System;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello ASMA! This is a test app for Deployment");
+            Console.WriteLine("Hello ASMA! This is test app for Deployment");
         }
-       
     }
 }
- 
-   
