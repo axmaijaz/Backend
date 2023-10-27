@@ -13,6 +13,6 @@
     <!-- Add other package references as needed -->
   </ItemGroup>
   
-  <TargetFramework>net7.0</TargetFramework>
+  <!-- <TargetFramework>net7.0</TargetFramework> -->
 
 </Project>
