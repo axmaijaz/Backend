@@ -7,7 +7,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
             Console.WriteLine("Hello ASMA! This is a test app for Deployment");
         }
        
